@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 25% 95%; /* Light gray #F0F2F5 */
+    --foreground: 224 71% 4%; /* Dark blue/black */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 197 71% 52%; /* Saturated Blue #29ABE2 */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 210 30% 88%;
+    --secondary-foreground: 224 71% 4%;
+
+    --muted: 210 30% 92%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 46 100% 70%; /* Vibrant Yellow #FFDA63 */
+    --accent-foreground: 45 100% 20%; /* Dark brown/black for text on accent */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 216 20% 85%;
+    --input: 216 20% 88%;
+    --ring: 197 71% 52%; /* Primary color for focus rings */
+
+    --radius: 0.5rem;
+
+    --chart-1: 197 71% 52%;
+    --chart-2: 46 100% 70%;
+    --chart-3: 210 30% 60%;
+    --chart-4: 197 50% 70%;
+    --chart-5: 46 80% 80%;
+
+    /* Sidebar specific vars, can be adjusted if sidebar is used extensively */
+    --sidebar-background: 220 15% 12%; /* Darker for sidebar */
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 197 71% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 46 100% 70%;
+    --sidebar-accent-foreground: 45 100% 20%;
+    --sidebar-border: 220 15% 25%;
+    --sidebar-ring: 197 71% 52%;
+  }
+
+  .dark {
+    --background: 220 15% 10%; /* Dark gray-blue */
+    --foreground: 210 40% 98%; /* Light text */
+
+    --card: 220 15% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 15% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 197 71% 52%; /* Saturated Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 220 15% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 46 100% 70%; /* Vibrant Yellow */
+    --accent-foreground: 45 100% 20%; /* Dark brown/black for text on accent */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 30%;
+    --input: 220 15% 30%;
+    --ring: 197 71% 52%; /* Primary color for focus rings */
+    
+    --chart-1: 197 71% 52%;
+    --chart-2: 46 100% 70%;
+    --chart-3: 210 30% 50%;
+    --chart-4: 197 50% 60%;
+    --chart-5: 46 80% 70%;
+
+    --sidebar-background: 220 15% 5%; 
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 197 71% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 46 100% 60%;
+    --sidebar-accent-foreground: 45 100% 15%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 197 71% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    @apply font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeIn 0.5s ease-out forwards;
+}
