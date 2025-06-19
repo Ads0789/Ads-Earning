@@ -1,7 +1,9 @@
-'use client'; // ✅ required in Next.js 13+ for client-side components
+'use client'; // ✅ Next.js 13+ required
+
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@/firebase'; // 🔴 this path is likely the issue (we'll fix this)
+// ✅ Fix the path here
+import { auth } from '../../firebase/firebaseConfig'; // ✅ Use relative path OR fix alias
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
