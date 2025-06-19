@@ -1,15 +1,13 @@
-'use client'; // ✅ Next.js 13+ required
-
+'use client';
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-// ✅ Fix the path here
-import { auth } from '../../firebase/firebaseConfig'; // ✅ Use relative path OR fix alias
+import { auth } from '../../firebase/firebaseConfig'; // Adjust path based on location
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (e: any) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
